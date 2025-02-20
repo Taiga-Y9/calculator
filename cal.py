@@ -30,7 +30,7 @@ class CalculatorApp(QWidget):
     # 数字ボタンを作成
     buttons = [
         7, 8, 9, '÷',
-        4, 5, 6, '*',
+        4, 5, 6, '×',
         1, 2, 3, '-',
         0, 'C', '=', '+'
     ]
@@ -55,7 +55,7 @@ class CalculatorApp(QWidget):
       elif self.sy == 1:  # n2の入力中
         self.n2 = self.n2 * 10 + text
         self.result_display.setText(str(self.n2))
-    elif text in ('+', '-', '*', '÷'):  # 演算子ボタンがクリックされた場合
+    elif text in ('+', '-', '×', '÷'):  # 演算子ボタンがクリックされた場合
       if self.sy == 0:  # n1の入力が完了したら
         self.operator = text
         self.sy = 1  # 次はn2の入力
@@ -76,7 +76,7 @@ class CalculatorApp(QWidget):
       return n1 + n2
     elif operator == '-':
       return n1 - n2
-    elif operator == '*':
+    elif operator == '×':
       return n1 * n2
     elif operator == '÷':
       return n1 / n2 if n2 != 0 else 'Error'  # ゼロで割った場合のエラーチェック
