@@ -1,6 +1,6 @@
-import sys
-from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout, QGridLayout, QPushButton, QLineEdit
+# calculator_app.py
 
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QGridLayout, QPushButton, QLineEdit
 
 class CalculatorApp(QWidget):
   def __init__(self):
@@ -88,10 +88,3 @@ class CalculatorApp(QWidget):
     self.operator = None
     self.sy = 0
     self.result_display.clear()  # 入力表示をクリア
-
-
-if __name__ == "__main__":
-  app = QApplication(sys.argv)
-  calculator = CalculatorApp()
-  calculator.show()
-  sys.exit(app.exec())
